@@ -26,5 +26,5 @@ if [ -d /etc/profile.d ]; then
   unset i
 fi
 
-/etc/motd.tcl
+./etc/motd.tcl
 fortune -s 

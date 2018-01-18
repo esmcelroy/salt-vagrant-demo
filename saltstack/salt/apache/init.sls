@@ -18,3 +18,17 @@ apache-restart:
   module.wait:
     - name: service.restart
     - m_name: {{ apache.service }}
+
+libapache2-mod-php7.0:
+  pkg:
+    - installed
+    - require_in:
+    - service: apache2
+  cmd:
+    - run
+    - name: a2enmod php7.0 rewrite
+    - require:
+      - pkg: libapache2-mod-php7.0
+
+/var/www/html/index.html:
+  file.absent

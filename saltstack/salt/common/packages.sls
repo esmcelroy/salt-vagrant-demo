@@ -4,11 +4,15 @@ common_packages:
       - htop
       - strace
       - vim
+      - git
+      - zsh
+      - tmux
 
 network_packages:
   pkg.installed:
     - pkgs:
       - rsync
-      - lftp
       - curl
+      - telnet
+
       

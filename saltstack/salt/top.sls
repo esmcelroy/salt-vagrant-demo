@@ -1,5 +1,11 @@
 base:
   '*':
     - common
-    - vim
     - openssh
+
+  'roles:wordpress':
+    - match: grain
+    - php
+    - mysql
+    - apache
+    - wordpress

@@ -390,8 +390,8 @@
 #  - roots
 #
 # To use multiple backends list them in the order they are searched:
-fileserver_backend:
-  - git
+# fileserver_backend:
+#  - git
 #  - roots
 #
 # Uncomment the line below if you do not want the file_server to follow
