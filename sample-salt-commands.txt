@@ -1,0 +1,12 @@
+salt '*' test.ping
+salt '*' grains.get os
+salt -G 'os:Ubuntu' cmd.run "apt-get update && apt-get -qq upgrade -y"
+salt 'minion1' cmd.run 'ps -aux'
+salt '*' cmd.run 'ls -l /etc'
+salt '*' disk.usage
+salt '*' pkg.install cowsay
+salt '*' pkg.install fortune
+salt '*' network.interfaces
+salt 'minion1' disk.usage
+salt -C 'G@os:Ubuntu and minion* or S@192.168.50.*' test.ping
+salt '*' cmd.exec_code python 'import sys; print sys.version’
